@@ -3,6 +3,8 @@
 
 #include <stdbool.h>
 
+#include <stdint.h>
+
 #include <openssl/err.h>
 #include <openssl/dh.h>
 #include <openssl/ssl.h>
@@ -21,5 +23,7 @@ void dtls_Shutdown(DTLSParams* k);
 int dtls_InitContextFromKeystore(DTLSParams* k, const char* keyname);
 int dtls_InitServer(DTLSParams* k);
 int dtls_InitClient(DTLSParams* k, const char *address);
+
+typedef unsigned int uint;
 
 #endif // dtls_h_
