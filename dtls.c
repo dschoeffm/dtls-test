@@ -20,7 +20,11 @@ void dtls_End() {
 	CRYPTO_cleanup_all_ex_data();
 }
 
-static int _ssl_verify_peer(int ok, X509_STORE_CTX *ctx) { return 1; }
+static int _ssl_verify_peer(int ok, X509_STORE_CTX *ctx) {
+	(void)ok;
+	(void)ctx;
+	return 1;
+}
 
 int dtls_InitContextFromKeystore(DTLSParams *params, const char *keyname) {
 	int result = 0;
