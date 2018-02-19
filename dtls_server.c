@@ -57,7 +57,6 @@ int main() {
 	while (true) {
 		struct sockaddr_in addr;
 		uint len = sizeof(addr);
-		SSL *ssl;
 
 		// Accept an incoming UDP packet (connection)
 		int client = accept(sock, (struct sockaddr *)&addr, &len);
